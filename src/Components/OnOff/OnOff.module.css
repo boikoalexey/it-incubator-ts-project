@@ -1,0 +1,39 @@
+.container {
+    width: 500px;
+    margin-top: 50px;
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.on {
+    --color: #0c2;
+}
+
+.off {
+    --color: #cc0029;
+}
+
+.button {
+    padding: 5px 15px;
+
+    background-color: var(--color);
+
+    border-radius: 15px;
+    outline: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    background-color: var(--color);
+
+    border-radius: 15px;
+}
