@@ -9,18 +9,30 @@ import OnOff from "./Components/OnOff/OnOff";
 
 function App() {
 
-    let [ratingValue, setRatingValue] = useState<RatingValue>(0)
-    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
-    let [switchOn, setSwitchOn] = useState<boolean>(false);
+    const [ratingValue, setRatingValue] = useState<RatingValue>(0)
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
+    const [switchOn, setSwitchOn] = useState<boolean>(false);
+    const [title, setTitle] = useState<string>('Controlled Accordion');
+    const items = [
+        {id: 1, name: 'Alex'},
+        {id: 2, name: 'Misha'},
+        {id: 3, name: 'Grisha'},
+        {id: 4, name: 'Natasha'},
+        {id: 5, name: 'Katie'},
+    ]
 
     return (
         <div className="App">
-            <Accordion titleValue={"Controlled Accordion"} collapsed={accordionCollapsed} callback={() => setAccordionCollapsed(!accordionCollapsed)} />
-            <UncontrolledAccordion titleValue={"Uncontrolled Accordion"}/>
+            <Accordion
+                title={title} collapsed={accordionCollapsed}
+                callback={() => setAccordionCollapsed(!accordionCollapsed)}
+                items={items}
+                newTitle={setTitle}/>
+            <UncontrolledAccordion title={"Uncontrolled Accordion"}/>
             <Rating ratingValue={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
             <OnOff callback={setSwitchOn} on={switchOn}/>
-            <UncontrolledOnOff />
+            <UncontrolledOnOff/>
         </div>
     );
 }

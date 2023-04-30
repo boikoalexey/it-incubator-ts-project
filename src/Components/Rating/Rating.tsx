@@ -3,12 +3,12 @@ import s from './Rating.module.css'
 
 export type RatingValue = 0 | 1 | 2 | 3 | 4 | 5
 
-type PropsRatingType = {
+export type PropsRatingType = {
     ratingValue: RatingValue
     onClick: (value: RatingValue) => void
 }
 
-function Rating(props: PropsRatingType) {
+const Rating = (props: PropsRatingType) => {
 
     return (
         <div>
