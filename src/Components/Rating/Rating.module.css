@@ -1,0 +1,11 @@
+.bold {
+    font-weight: bold;
+}
+
+span {
+    margin-right: 15px;
+}
+
+span:hover {
+    cursor: pointer;
+}
